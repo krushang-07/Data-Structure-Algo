@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// length function
+// length
 int getLength(char name[])
 {
     int count = 0;
@@ -13,6 +13,17 @@ int getLength(char name[])
     return count;
 }
 
+// Reverse String function
+void reverse(char name[], int n)
+{
+    int s = 0;
+    int e = n - 1;
+    while (s < e)
+    {
+        swap(name[s++], name[e--]);
+    }
+}
+
 int main()
 {
     char name[20];
@@ -21,9 +32,10 @@ int main()
     cin >> name;
     //  name[2] = '\0'; // null char
 
+    int len = getLength(name);
+    reverse(name, len);
+     
     cout << "your name is "; // kr
     cout << name << endl;
-
-    cout << "Length: " << getLength(name) << endl;
     return 0;
 }
