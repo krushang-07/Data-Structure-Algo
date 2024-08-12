@@ -24,13 +24,26 @@ int getLength(char name[])
 //     }
 // }
 
+char toLowercase(char ch)
+{
+
+    if (ch >= 'a' && ch <= 'z')
+    {
+        return ch;
+    }
+    else
+    {
+        char temp = ch - 'A' + 'a';
+        return temp;
+    }
+}
 bool isPalindrome(char a[], int n)
 {
     int s = 0;
     int e = n - 1;
     while (s <= e)
     {
-        if (a[s] != a[e])
+        if (toLowercase(a[s]) != toLowercase(a[e]))
         {
             return false;
         }
